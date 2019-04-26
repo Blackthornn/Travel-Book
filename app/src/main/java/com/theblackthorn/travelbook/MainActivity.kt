@@ -13,10 +13,14 @@ import com.google.android.gms.maps.model.LatLng
 import kotlinx.android.synthetic.main.activity_main.*
 import java.lang.Exception
 
+
+var namesArray = ArrayList<String>()
+var locationArray = ArrayList<LatLng>()
+
+
 class MainActivity : AppCompatActivity() {
 
-    var namesArray = ArrayList<String>()
-    var locationArray = ArrayList<LatLng>()
+
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
 
@@ -38,9 +42,8 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+    override fun onResume() {
+
 
         try {
 
@@ -94,6 +97,14 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
 
         }
+
+        super.onResume()
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
 
     }
 
